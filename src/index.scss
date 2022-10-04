@@ -1,0 +1,27 @@
+//========================// NAVIGATION STYLES //==========================//
+
+.Navigation {
+    a {
+        margin: 20px;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+//========================// DOCUMENT STYLES //==========================//
+body {
+    margin: 0;
+
+    .App {
+        text-align: center;
+
+        .Home {}
+
+        .About {}
+
+        .Portfolio {}
+
+        .Contact {}
+    }
+
+}
