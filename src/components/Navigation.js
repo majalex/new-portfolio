@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import Logo from '../asets/finallogo.svg';
 
 const Navigation = () => {
   return (
     <div className="Navigation">
+      <img src={Logo} alt="React Logo" />
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
       <NavLink to="/projects">Portfolio</NavLink>

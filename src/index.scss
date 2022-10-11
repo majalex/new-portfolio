@@ -1,21 +1,204 @@
+//========================//      VARIABLES     //==========================//
+$base-color: #023047;
+$primary-color: #219ebc;
+$secondary-color: #8ecae6;
+$tertiary-color: #ffb703;
+$quaternary-color: #fb8500;
+
+//========================//      IMPORTS    //==========================//
+@import url("https://use.typekit.net/cpx4awy.css");
+
+// Aviano Future - main
+// weight : 100,300,400,700,800,900 // each normal and italic
+
+// Marydale - hand-written
+// weight: 400, 700, 900
+
+
+
+@import 'animate.css';
+
+//========================// LETTER ANIMATION   //==========================//
+
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: rubberBand 1s;
+        color: #ffb703;
+    }
+}
+
+@for $i from 1 through 100 {
+    .text-animate._#{$i} {
+        animation-delay: #{$i * 0.1}s;
+    }
+}
+
+
+
 //========================// NAVIGATION STYLES //==========================//
 
 .Navigation {
-    a {
-        margin: 20px;
-        text-decoration: none;
-        color: black;
+    background-color: lightblue;
+    padding: 20px;
+
+    img {
+        position: absolute;
+        left: 25px;
+        top: 3px;
+        height: 50px;
+
     }
+
+    a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #000;
+
+    }
+
+    a:hover {
+        border-bottom: 2px solid darkgray;
+    }
+}
+
+//========================// GLOBAL COMPONENTS //==========================//
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 4px;
+    padding: 10px 18px;
+    text-decoration: none;
+    margin: 5px;
+    font-family: sans-serif;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
 }
 
 //========================// DOCUMENT STYLES //==========================//
 body {
     margin: 0;
+    font-family: aviano-future, sans-serif;
+    font-weight: 400;
+    background-image: polygon(25% 0%, 75% 0%, 100% 50%, 0 50%, 0% 50%), red;
+    // background-color: #fff;
+    color: #000;
 
     .App {
         text-align: center;
 
-        .Home {}
+        .Home {
+            .bg-c{
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                background-color: lightblue;
+                width: 100%;
+                height: 30%;
+                position: absolute;
+                bottom: 0;
+                z-index: -9999;
+            }
+            .home-container {
+                width: 85%;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 20vh;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .header-section {
+                    text-align: left;
+                    .circle-container{
+                        display: flex;
+                        justify-content: end;
+                        margin-bottom: 25px;
+                        .circle{
+                            width: 100%;
+                            text-align: right;
+                            border: 1px solid black;
+                            width: 60px;
+                            height: 60px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background-color: #000;
+                            color: #fff;
+                            font-family: marydale, sans-serif;
+                            font-weight: 700;
+                            font-size: 20px;
+                            
+                        }
+                    }
+                    .header-one{
+                        font-size: 1.5em;
+                        margin-bottom: 15px;
+                        font-weight: 300;
+                    }
+                    .header-two{
+                        font-size: 2em;
+                        margin-bottom: 15px;
+                        font-weight: 800;
+                    }
+                    .header-three{
+                        font-size: 1.5em;
+                        margin-bottom: 15px;
+                        font-weight: 300;
+                    }
+                    .flex-section{
+                        display: flex;
+                        align-items: center;
+                        .job-titles {
+                            height: 50px;
+                            overflow: hidden;
+                                .title-item {
+                                    height: 50px;
+                                    font-size: 2em;
+                                    font-family: marydale, sans-serif;
+                                    font-weight: 700;
+                                    color: blue;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                        }
+                        .job-title{
+                            font-size: 1.5em;
+                            font-weight: 300;
+                            font-style: italic;
+                            margin-left: 10px;
+                            padding-top: 8px;
+                        }
+                    }
+                    .home-buttons {
+                        margin-top: 20px;
+                    }
+                }
+
+                .home-vector {
+                    width: 30%;
+                }
+            }
+        }
 
         .About {}
 

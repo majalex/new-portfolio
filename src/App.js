@@ -3,9 +3,40 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-
+import { useEffect } from 'react';
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
+import { CustomWiggle } from "gsap/CustomWiggle";
 
 const App = () => {
+
+
+// gsap animations
+  useEffect(() => {
+    gsap.registerPlugin(CustomEase, CustomWiggle);
+    var tl1 = gsap.timeline({repeat: -1});
+    var tl2 = gsap.timeline({repeat: -1})
+    CustomWiggle.create("myWiggle", {wiggles: 15, type: "easeInOut"});
+
+  // hello
+    tl1.to(".circle", {duration: 2, rotation: 30, ease: "myWiggle"});
+
+  // section apear
+    gsap.from(".flex-section",{xPercent: -200, duration:2, delay:2})
+
+
+
+  // job title
+    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
+
+  //img
+  gsap.fromTo(".vector", {scale:1}, {scale:0.8, repeat: -1, yoyo: true, duration: 7})
+
+  }, [])
+
   return (
     <div className="App">
 
@@ -19,12 +50,6 @@ const App = () => {
 
         </Routes>
       </BrowserRouter>
-
-
-      {/* <Home/>
-      <About/>
-      <Portfolio/>
-      <Contact/> */}
     </div>
   );
 }
