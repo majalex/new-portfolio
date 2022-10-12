@@ -11,7 +11,7 @@ import { CustomWiggle } from "gsap/CustomWiggle";
 const App = () => {
 
 
-// gsap animations
+//=========== gsap animations ============//
   useEffect(() => {
     gsap.registerPlugin(CustomEase, CustomWiggle);
     var tl1 = gsap.timeline({repeat: -1});
@@ -19,7 +19,7 @@ const App = () => {
     CustomWiggle.create("myWiggle", {wiggles: 15, type: "easeInOut"});
 
   // hello
-    tl1.to(".circle", {duration: 2, rotation: 30, ease: "myWiggle"});
+    tl1.to(".circle", {duration: 2, rotation: 20, ease: "myWiggle"});
 
   // section apear
     gsap.from(".flex-section",{xPercent: -200, duration:2, delay:2})
@@ -29,11 +29,12 @@ const App = () => {
   // job title
     tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -150, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
 
-  //img
-  gsap.fromTo(".vector", {scale:1}, {scale:0.8, repeat: -1, yoyo: true, duration: 7})
+
 
   }, [])
 
@@ -42,12 +43,10 @@ const App = () => {
 
       <BrowserRouter>
         <Routes>
-
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Portfolio />} />
-
         </Routes>
       </BrowserRouter>
     </div>
