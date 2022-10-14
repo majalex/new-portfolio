@@ -17,7 +17,7 @@ const App = () => {
     var tl1 = gsap.timeline({repeat: -1});
     var tl2 = gsap.timeline({repeat: -1})
     CustomWiggle.create("myWiggle", {wiggles: 15, type: "easeInOut"});
-
+//========= home page ===============//
   // hello
     tl1.to(".circle", {duration: 2, rotation: 20, ease: "myWiggle"});
 
@@ -34,7 +34,12 @@ const App = () => {
     tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
 
+//========= about page ===============//
+    gsap.from(".about-paragraph", {xPercent:-200, duration: 2, stagger:0.5})
+    gsap.from(".about-buttons", {yPercent:300, delay:2, duration: 2, stagger:0.5})
+    gsap.to(".li-ss", {color:"#ffd03e", duration: 2, stagger:0.5, delay:4, repeat:-1, yoyo:true})
 
+    
 
   }, [])
 
