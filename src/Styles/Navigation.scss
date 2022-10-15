@@ -1,0 +1,32 @@
+//========================// NAVIGATION STYLES //==========================//
+
+.Navigation {
+    padding: 20px;
+
+    img {
+        position: absolute;
+        left: 25px;
+        top: 3px;
+        height: 50px;
+
+    }
+
+    a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $quaternary-color;
+
+    }
+
+    a:hover {
+        border-bottom: 2px solid $quaternary-color;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .Navigation {
+        img {
+            display: none;
+        }
+    }
+}

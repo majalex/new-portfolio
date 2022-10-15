@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { CustomWiggle } from "gsap/CustomWiggle";
+import Skills from './components/Skills';
 
 const App = () => {
 
@@ -33,14 +34,6 @@ const App = () => {
     tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
-
-//========= about page ===============//
-    gsap.from(".about-paragraph", {xPercent:-200, duration: 2, stagger:0.5})
-    gsap.from(".about-buttons", {yPercent:300, delay:2, duration: 2, stagger:0.5})
-    gsap.to(".li-ss", {color:"#ffd03e", duration: 2, stagger:0.5, delay:4, repeat:-1, yoyo:true})
-
-    
-
   }, [])
 
   return (
@@ -49,6 +42,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
             <Route index element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Portfolio />} />

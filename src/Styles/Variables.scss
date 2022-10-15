@@ -1,0 +1,24 @@
+//========================//      VARIABLES     //==========================//
+$base-color: #ffd03e;
+$primary-color: #6b67e9;
+$secondary-color: #20196f;
+$tertiary-color: #dae0f5;
+$quaternary-color: #162022;
+
+
+$main-font: ofelia-text, sans-serif;
+$hand-written-font: marydale, sans-serif;
+$section-font: aviano-future, sans-serif;
+
+//========================//      IMPORTS    //==========================//
+@import url("https://use.typekit.net/cpx4awy.css");
+// Aviano Future - main
+// weight : 100,300,400,700,800,900 // each normal and italic
+
+// Marydale - hand-written
+// weight: 400, 700, 900
+
+// Ofelia Text Bold
+// weight: 300, 400, 500, 600, 700
+
+@import 'animate.css';

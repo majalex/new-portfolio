@@ -1,0 +1,105 @@
+@import "./Variables.scss";
+@import "./Navigation.scss";
+@import "./Global.scss";
+
+
+.Home {
+    .home-container {
+
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        .header-section {
+            text-align: left;
+            margin-left: 60px;
+            margin-right: 120px;
+            margin-top: 100px;
+
+            .circle-container {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 25px;
+
+                .circle {
+                    width: 100%;
+                    text-align: right;
+                    border: 1px solid $base-color;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: $base-color;
+                    color: $quaternary-color;
+                    font-family: $hand-written-font;
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+
+            .header-one {
+                font-size: 2em;
+                margin-bottom: 15px;
+                font-weight: 800;
+            }
+
+            .header-two {
+                font-size: 2em;
+                margin-bottom: 15px;
+                font-weight: 800;
+            }
+
+            .header-three {
+                font-size: 2em;
+                margin-bottom: 15px;
+                font-weight: 800;
+            }
+
+            .flex-section {
+                display: flex;
+                align-items: center;
+
+                .job-titles {
+                    height: 50px;
+                    overflow: hidden;
+
+                    .title-item {
+                        height: 50px;
+                        font-size: 2em;
+                        font-family: $hand-written-font;
+                        font-weight: 700;
+                        color: $primary-color;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+
+                .job-title {
+                    font-size: 1.5em;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-left: 10px;
+                    padding-top: 8px;
+                }
+            }
+
+            .home-buttons {
+                margin-top: 20px;
+            }
+        }
+
+        .home-vector {
+            width: 50%;
+        }
+
+        .background-vector {
+            width: 50%;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            z-index: -9999;
+        }
+    }
+}

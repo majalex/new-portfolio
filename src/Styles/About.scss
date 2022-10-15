@@ -1,0 +1,30 @@
+@import "./Variables.scss";
+@import "./Navigation.scss";
+@import "./Global.scss";
+
+.About {
+    background-color: $primary-color;
+    height: 100vh;
+
+    .about-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .about-text {
+            width: 40%;
+            margin-top: 50px;
+            margin-left: 50px;
+
+            h1 {
+                width: 100%;
+            }
+
+            p {
+                font-weight: 100;
+                text-align: justify;
+                font-family: $main-font;
+            }
+        }
+    }
+}

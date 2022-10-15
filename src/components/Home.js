@@ -1,5 +1,6 @@
+import '../Styles/Home.scss';
 import Navigation from './Navigation';
-import AnimatedLetters from '../AnimatedLetters';
+import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from 'react';
 import programmer from '../asets/programmer.svg';
 import background from '../asets/bc-g.svg';
