@@ -1,0 +1,148 @@
+@import "./Variables.scss";
+@import "./Navigation.scss";
+@import "./Global.scss";
+
+.Contact {
+    .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        
+        .text-zone {
+            width: 40%;
+            padding: 5%;
+            p{
+                font-family: $main-font;
+            }
+            .contact-form {
+                margin-top: 20px;
+
+                ul {
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        margin-bottom: 10px;
+                        opacity: 0;
+                        overflow: hidden;
+                        display: block;
+                        clear: both;
+                        position: relative;
+                        animation: fadeInUp 1s 1.2s;
+                        animation-fill-mode: forwards;
+                    }
+
+                    li.half {
+                        width: 49%;
+                        margin-left: 2%;
+                        float: left;
+                        clear: none;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                input[type='text'],
+                input[type='email'] {
+                    width: 100%;
+                    border: 0;
+                    background: $primary-color;
+                    height: 50px;
+                    font-size: 16px;
+                    color: #fff;
+                    padding: 0 20px;
+                    box-sizing: border-box;
+                }
+
+                textarea {
+                    width: 100%;
+                    border: 0;
+                    background: $primary-color;
+                    height: 50px;
+                    font-size: 16px;
+                    color: #fff;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    min-height: 150px;
+                } 
+                ::placeholder{
+                    color: $base-color;
+                }
+                .btn {
+                    background-color: $base-color;
+                    font-size: 15px;
+                    letter-spacing: 4px;
+                    padding: 15px 18px;
+                    margin: 10px;
+                    color: $primary-color;
+                }
+                .btn:hover {
+                    background-color: $primary-color;
+                    color: $base-color;
+                    box-shadow: inset 0 0 1em rgba(107,103,233,0.5), 0 0 1em rgba(107,103,233,0.7);
+                }
+            }
+        }
+
+
+        .map-wrap {
+            background: rgba(8, 253, 216, 0.1);
+            width: 40%;
+            margin: 5%;
+            height: 500px;
+            .leaflet-container {
+                position: relative;
+                width: 100%;
+                height: 500px;
+                opacity: 0;
+                animation: backInRight 1s 1.2s;
+                animation-fill-mode: forwards;
+            }
+            .info-map {
+                font-family: $main-font;
+                position: relative;
+                top: -90%;
+                right: -45%;
+                background: #000;
+                z-index: 999999;
+                width: 200px;
+                padding: 20px;
+                color: #fff;
+                background-color: $primary-color;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: 300;
+                opacity: 0;
+                animation: fadeIn 1s 1.5s;
+                animation-fill-mode: forwards;
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .info-map {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 930px) {
+
+    .Contact{
+        .contact-container{
+            .text-zone{
+                width: 100%;
+            }
+            .map-wrap{
+                width: 100%;
+            }
+        }
+    }
+}

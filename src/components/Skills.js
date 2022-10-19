@@ -2,9 +2,22 @@ import '../Styles/Skills.scss';
 import Navigation from './Navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBootstrap, faCss3, faGithub, faHtml5, faJsSquare, faReact } from "@fortawesome/free-brands-svg-icons";
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
+import { CustomWiggle } from "gsap/CustomWiggle";
+import { useEffect } from 'react';
 
 const Skills = () => {
-  
+  useEffect(() => {
+    document.body.style.backgroundColor = "#6b67e9"
+    gsap.registerPlugin(CustomEase, CustomWiggle);
+    CustomWiggle.create("myWiggle", {wiggles: 2, type: "easeInOut"});
+    var tl1 = gsap.timeline({repeat: -1});
+    tl1.to("td", {stagger:.1, duration: 5, rotation: 3, ease: "myWiggle",backgroundColor:"rgba(107,103,233,0.1)"});
+    return () => {
+      document.body.style.backgroundColor = ""
+    }    
+  }, [])
   return (
     <div className='Skills'>
       <Navigation></Navigation>
@@ -18,15 +31,11 @@ const Skills = () => {
               <td>jQuery</td>
               <td>AJAX</td>
               <td>ReactJS</td>
-            </tr>
-            <tr>
               <td>MongoDB</td>
               <td>Node.js</td>
               <td>SASS</td>
               <td>Bootstrap</td>
               <td>WorldPress</td>
-            </tr>
-            <tr>
               <td>Adobe Ilustrator</td>
               <td>GitHub</td>
               <td>Express.js</td>

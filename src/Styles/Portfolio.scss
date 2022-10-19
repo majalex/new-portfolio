@@ -2,7 +2,134 @@
 @import "./Navigation.scss";
 @import "./Global.scss";
 
-.Portfolio{
-    background-color: $base-color;
-    height: 100vh;
+.Portfolio {
+    .portfolio-container {
+        position: initial;
+        height: auto;
+        min-height: auto;
+        width: 100%;
+        margin-top: 50px;
+
+        .text-zone {
+            position: initial;
+            transform: none;
+            width: 100%;
+            display: block;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .projects {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+            .product-container {
+                margin: 20px;
+                text-align: center;
+
+                .product-box {
+                    width: 320px;
+                    height: 40vh;
+                    margin: 0;
+                    border-radius: 10px 10px 0 0;
+                    z-index: 3;
+                    overflow: hidden;
+
+                    .browser-element {
+                        width: 100%;
+                        height: 1.5vh;
+                        background-color: #181818;
+                        display: flex;
+                        position: sticky;
+                        z-index: 2;
+
+                        .browser-crircle {
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            margin: auto 1px;
+
+                            &:nth-of-type(1) {
+                                background-color: red;
+                                margin-left: 3px;
+                            }
+
+                            &:nth-of-type(2) {
+                                background-color: orange;
+                            }
+
+                            &:nth-of-type(3) {
+                                background-color: green;
+                            }
+                        }
+                    }
+
+                    .p-img {
+                        width: 100%;
+                        transition: all 10s ease;
+                    }
+                }
+
+                .product-box:hover .p-img {
+                    transform: translateY(calc(-100% + 41vh));
+
+                }
+
+                .btn {
+                    margin: 10px;
+                    margin-top: 30px;
+                    background-color: $base-color;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Portfolio {
+        .portfolio-container {
+            margin-top: 0;
+            .projects {
+                margin-top: 20px;
+                .product-container {
+                    .product-box {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .Portfolio {
+        .portfolio-container {
+            .projects {
+                .product-container {
+                    .product-box {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .Portfolio {
+        .portfolio-container {
+            .projects {
+                .product-container {
+                    .product-box {
+                        width: 350px;
+                    }
+                }
+            }
+        }
+    }
 }
