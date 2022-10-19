@@ -2,6 +2,8 @@ import '../Styles/About.scss';
 import Navigation from './Navigation';
 import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from "react";
+import photo from '../asets/project.jpeg';
+import { gsap } from "gsap";
 
 
 const About = () => {
@@ -11,6 +13,7 @@ const About = () => {
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
     }, 3000)
+    gsap.from(".about-paragraph", { xPercent: -200, duration: 2, stagger: 0.5 })
   }, [])
 
   return (
@@ -25,9 +28,18 @@ const About = () => {
               idx={5}
             />
           </h1>
-          <p className='about-paragraph'> I'm learning, and developing my skills to become a Full Stack Developer! Working for a company with lots of ambitious projects is my main goal. Job of my dreams is a place where we can create a great team working together, and friends whose constructive feedback will help me to spread my wings. </p>
-          <p className='about-paragraph'>My passion for programming has been discovered erlier this year. I started a Full Stack Developer Bootcamp in June. I lerned many of the most popular technologies when it comes to proggraming. By far I consider this as one of my best decisions.</p>
+          <p className='about-paragraph'>I discovered my passion for programming earlier this year. In June I started a Full Stack Developer Bootcamp, where I learned many of the most popular technologies when it comes to programming.</p>
+          <p className='about-paragraph'>My previous work experience was a job in the administration sector. I was an assistant at the notary office and was responsible for creating various document projects.</p>
+          <p className='about-paragraph'> I'm hungry for knowledge, and I'm developing my skills to become a Full Stack Developer! My main goal is to work in a place with a lot of ambitious projects. I would love to work in a team so I can get some constructive feedback and tips. As a junior developer, I consider this to be very useful.</p>
         </div>
+        <div className='photo-container'>
+          <img src={photo} alt="img" />
+          <div className='buttons'>
+            <button className='btn'>My skills</button>
+            <button className='btn'>My portfolio</button>
+          </div>
+        </div>
+
       </div>
     </div>
   )

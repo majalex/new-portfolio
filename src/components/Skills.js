@@ -1,19 +1,10 @@
 import '../Styles/Skills.scss';
 import Navigation from './Navigation';
-import AnimatedLetters from './AnimatedLetters';
-import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBootstrap, faCss3, faGithub, faHtml5, faJsSquare, faReact } from "@fortawesome/free-brands-svg-icons";
 
 const Skills = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-
-  useEffect(() => {
-    setTimeout(() => {
-      return setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
-
+  
   return (
     <div className='Skills'>
       <Navigation></Navigation>
@@ -42,8 +33,6 @@ const Skills = () => {
               <td>GSAP</td>
             </tr>
           </table>
-
-
         </div>
         <div className='skills-animation'>
           <div className="stage-cube-cont">
@@ -73,13 +62,19 @@ const Skills = () => {
           <span>My soft skills:</span>
           <table>
             <tr>
-              <td>Ability to activly listen</td>
               <td>Growth Mindset</td>
-              <td>Good comunication skills</td>
               <td>Creativity</td>
-              <td>Open for constructive feedback</td>
+              <td>Problem-solving</td>
+              <td>Self-reliance</td>
+              <td>Teamwork</td>
+              <td>Reliability</td>
+              <td>Open for feedback</td>
+              <td>Enthusiasm</td>
+              <td>Active listening</td>
+              <td>Copywriting skills</td>
+              <td>Planning</td>       
+              <td>Adaptability</td>         
             </tr>
-
           </table>
         </div>
 

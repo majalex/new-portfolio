@@ -4,6 +4,10 @@ import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from 'react';
 import programmer from '../asets/programmer.svg';
 import background from '../asets/bc-g.svg';
+import background2 from '../asets/bc-g-s.svg';
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
+import { CustomWiggle } from "gsap/CustomWiggle";
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -12,6 +16,20 @@ const Home = () => {
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
     }, 4500)
+
+    gsap.registerPlugin(CustomEase, CustomWiggle);
+    var tl1 = gsap.timeline({repeat: -1});
+    var tl2 = gsap.timeline({repeat: -1})
+    CustomWiggle.create("myWiggle", {wiggles: 15, type: "easeInOut"});
+    tl1.to(".circle", {duration: 2, rotation: 20, ease: "myWiggle"});
+    gsap.from(".flex-section",{xPercent: -200, duration:2, delay:2})
+    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -150, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
+    tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
+    
   }, [])
 
 
@@ -64,6 +82,9 @@ const Home = () => {
           </div>
           <div className='background-vector'>
             <img src={background} alt="vector img" />
+          </div>
+          <div className='background-vector2'>
+            <img src={background2} alt="vector img2" />
           </div>
         </div>
       </>
