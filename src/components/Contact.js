@@ -15,7 +15,7 @@ const Contact = () => {
     document.body.style.backgroundColor = "#ffd03e"
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
-    }, 3000)
+    }, 1500)
     gsap.from("p", { xPercent: -200, duration: 4})
     return () => {
       document.body.style.backgroundColor = ""

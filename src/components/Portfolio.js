@@ -2,9 +2,9 @@ import '../Styles/Portfolio.scss';
 import Navigation from './Navigation';
 import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from 'react';
-import img1 from "../asets/1.png";
-import img2 from "../asets/2.png";
-import img3 from "../asets/3.png";
+import img1 from "../assets/1.png";
+import img2 from "../assets/2.png";
+import img3 from "../assets/3.png";
 
 
 const Portfolio = () => {
@@ -14,7 +14,7 @@ const Portfolio = () => {
     document.body.style.backgroundColor = "#ffd03e"
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
-    }, 3000)
+    }, 1500)
     return () => {
       document.body.style.backgroundColor = ""
     }

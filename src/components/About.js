@@ -2,10 +2,11 @@ import '../Styles/About.scss';
 import Navigation from './Navigation';
 import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from "react";
-import photo from '../asets/project.jpeg';
+import photo from '../assets/project.jpeg';
 import { gsap } from "gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 
 const About = () => {
@@ -15,7 +16,7 @@ const About = () => {
     document.body.style.backgroundColor = "#6b67e9"
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
-    }, 3000)
+    }, 1500)
     gsap.from(".about-paragraph", { xPercent: -200, duration: 2, stagger: 0.5 })
     return () => {
       document.body.style.backgroundColor = ""
@@ -41,7 +42,7 @@ const About = () => {
         <div className='photo-container'>
           <img src={photo} alt="img" />
           <div className='buttons'>
-            <a href='/skills'><button className='btn'>My skills</button></a>
+            <NavLink to="/skills"><button className='btn'>My skills</button></NavLink>
             <a href='https://github.com/majalex' target="blank"><button className='btn'>Github &nbsp;
               <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
             </button></a>

@@ -11,9 +11,17 @@
         .text-zone {
             width: 40%;
             padding: 5%;
+            
+            .text-animate-hover {
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
             p{
                 font-family: $main-font;
             }
+
             .contact-form {
                 margin-top: 20px;
 
@@ -125,7 +133,6 @@
         }
     }
 }
-
 
 @media screen and (max-width: 1200px) {
     .info-map {

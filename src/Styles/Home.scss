@@ -6,12 +6,11 @@
 .Home {
     .home-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: 8%;
+        margin-top: 20vh;
        
-
         .header-section {
             text-align: left;
             margin-left: 150px;
@@ -86,6 +85,10 @@
         .home-vector {
             width: 40%;
             margin-right: 100px;
+            max-height: 500px;
+            img{
+                max-height: 500px;
+            }
         }
 
         .background-vector {
@@ -107,9 +110,10 @@
     }
 }
 
-@media screen and (max-width: 1055px) {
+@media screen and (max-width: 1600px) {
     .Home {
         .home-container {
+            justify-content: space-evenly;
             .header-section {
                 margin-left: 50px;
             }

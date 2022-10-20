@@ -18,6 +18,14 @@
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
+            .page-title{
+                .text-animate-hover {
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
         }
 
         .projects {

@@ -2,12 +2,13 @@ import '../Styles/Home.scss';
 import Navigation from './Navigation';
 import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from 'react';
-import programmer from '../asets/programmer.svg';
-import background from '../asets/bc-g.svg';
-import background2 from '../asets/bc-g-s.svg';
+import programmer from '../assets/programmer.svg';
+import background from '../assets/bc-g.svg';
+import background2 from '../assets/bc-g-s.svg';
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { CustomWiggle } from "gsap/CustomWiggle";
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -73,8 +74,8 @@ const Home = () => {
               <span className='job-title'>developer</span>
             </div>
             <div className='home-buttons'>
-            <a href='/about'><button className='btn'>About me</button></a>
-            <a href='/contact'><button className='btn'>Contact</button></a>
+            <NavLink to="/about"><button className='btn'>About me</button></NavLink>
+            <NavLink to="/contact"><button className='btn'>Contact</button></NavLink>
             </div>
           </div>
           <div className='home-vector'>

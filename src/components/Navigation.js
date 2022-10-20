@@ -1,7 +1,7 @@
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
-import Logo from '../asets/finallogo.svg';
+import Logo from '../assets/finallogo.svg';
 import React, { useState } from "react"
 
 const Navigation = () => {
