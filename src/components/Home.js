@@ -73,8 +73,8 @@ const Home = () => {
               <span className='job-title'>developer</span>
             </div>
             <div className='home-buttons'>
-              <button className='btn'>About me</button>
-              <button className='btn'>Contact</button>
+            <a href='/about'><button className='btn'>About me</button></a>
+            <a href='/contact'><button className='btn'>Contact</button></a>
             </div>
           </div>
           <div className='home-vector'>

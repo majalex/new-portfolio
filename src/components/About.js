@@ -4,6 +4,8 @@ import AnimatedLetters from './AnimatedLetters';
 import { useEffect, useState } from "react";
 import photo from '../asets/project.jpeg';
 import { gsap } from "gsap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 const About = () => {
@@ -39,8 +41,10 @@ const About = () => {
         <div className='photo-container'>
           <img src={photo} alt="img" />
           <div className='buttons'>
-            <button className='btn'>My skills</button>
-            <button className='btn'>My portfolio</button>
+            <a href='/skills'><button className='btn'>My skills</button></a>
+            <a href='https://github.com/majalex' target="blank"><button className='btn'>Github &nbsp;
+              <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+            </button></a>
           </div>
         </div>
 
