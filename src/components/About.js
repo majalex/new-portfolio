@@ -6,7 +6,7 @@ import photo from '../assets/project.jpeg';
 import { gsap } from "gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const About = () => {
@@ -18,6 +18,8 @@ const About = () => {
       return setLetterClass('text-animate-hover')
     }, 1500)
     gsap.from(".about-paragraph", { xPercent: -200, duration: 2, stagger: 0.5 })
+    gsap.from(".photo-me", { xPercent: 200, duration: 1.5, ease:"power4"})
+    gsap.from("button", { yPercent: 3000, duration: 2, stagger:0.3,  ease:"power4"})
     return () => {
       document.body.style.backgroundColor = ""
     }
@@ -40,9 +42,9 @@ const About = () => {
           <p className='about-paragraph'> I'm hungry for knowledge, and I'm developing my skills to become a Full Stack Developer! My main goal is to work in a place with a lot of ambitious projects. I would love to work in a team so I can get some constructive feedback and tips. As a junior developer, I consider this to be very useful.</p>
         </div>
         <div className='photo-container'>
-          <img src={photo} alt="img" />
+          <img src={photo} alt="img" className='photo-me'/>
           <div className='buttons'>
-            <NavLink to="/skills"><button className='btn'>My skills</button></NavLink>
+            <Link to="/skills"><button className='btn'>My skills</button></Link>
             <a href='https://github.com/majalex' target="blank"><button className='btn'>Github &nbsp;
               <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
             </button></a>

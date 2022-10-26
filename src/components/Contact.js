@@ -2,14 +2,13 @@ import '../Styles/Contact.scss';
 import Navigation from './Navigation'
 import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
-import emailjs from '@emailjs/browser'
 import AnimatedLetters from './AnimatedLetters'
 import { gsap } from "gsap";
+import Form from './Functionalities/Form'
+
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const form = useRef()
 
   useEffect(() => {
     document.body.style.backgroundColor = "#ffd03e"
@@ -22,21 +21,6 @@ const Contact = () => {
     }
   }, [])
 
-  const sendEmail = (e) => {
-    e.preventDefault()
-
-    emailjs
-      .sendForm('service_u26l8jd', 'template_r1hi5it', form.current, '4sHT-Sh-lEbqcrJGA')
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          window.location.reload(false)
-        },
-        () => {
-          alert('Failed to send the message, please try again')
-        }
-      )
-  }
 
   return (
 
@@ -52,43 +36,9 @@ const Contact = () => {
             />
           </h1>
           <p>
-            Do you heve any questions? Fell free to reach me out. Lets talk about it!
+          Do you have any questions? Feel free to reach me out. Let's talk about it!
           </p>
-          <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
-              <ul>
-                <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
-                </li>
-                <li className="half">
-                  <input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
-                    required
-                  />
-                </li>
-                <li>
-                  <textarea
-                    placeholder="Message"
-                    name="message"
-                    required
-                  ></textarea>
-                </li>
-                <li>
-                  <input type="submit" className="btn" value="SEND" />
-                </li>
-              </ul>
-            </form>
-          </div>
+          <Form />
         </div>
         <div className="map-wrap">
           <MapContainer center={[54.515, 18.54]} zoom={10} scrollWheelZoom={false}>

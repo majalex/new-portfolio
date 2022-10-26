@@ -23,14 +23,17 @@
 
 
 
-
-body {
-    margin: 0;
-    font-family: aviano-future, sans-serif;
-    font-weight: 400;
-    color: $quaternary-color;
-
-    .App {
-        text-align: center;
+*{
+    box-sizing: border-box;
+    body {
+        margin: 0;
+        font-family: aviano-future, sans-serif;
+        font-weight: 400;
+        color: $quaternary-color;
+        overflow-x: hidden;
+    
+        .App {
+            text-align: center;
+        }
     }
 }

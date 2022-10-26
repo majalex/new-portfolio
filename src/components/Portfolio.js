@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
 import img3 from "../assets/3.png";
+import { gsap } from "gsap";
 
 
 const Portfolio = () => {
@@ -15,9 +16,11 @@ const Portfolio = () => {
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
     }, 1500)
+    gsap.from(".product-container", {yPercent:200, stagger: 0.3, duration: 2})
     return () => {
       document.body.style.backgroundColor = ""
     }
+    
   }, [])
 
   return (

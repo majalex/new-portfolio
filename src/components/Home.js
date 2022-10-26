@@ -8,7 +8,7 @@ import background2 from '../assets/bc-g-s.svg';
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { CustomWiggle } from "gsap/CustomWiggle";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -30,7 +30,9 @@ const Home = () => {
     tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
     tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
-    
+    gsap.from(".home-buttons", {yPercent: 1000, deley:2, duration:3})
+    gsap.from(".home-vector", {xPercent: 1000, deley:1.5, duration:3, ease:"power4"})
+    gsap.from(".circle", {scale:0.1, duration:1 })
   }, [])
 
 
@@ -74,8 +76,8 @@ const Home = () => {
               <span className='job-title'>developer</span>
             </div>
             <div className='home-buttons'>
-            <NavLink to="/about"><button className='btn'>About me</button></NavLink>
-            <NavLink to="/contact"><button className='btn'>Contact</button></NavLink>
+            <Link to="/about"><button className='btn'>About me</button></Link>
+            <Link to="/contact"><button className='btn'>Contact</button></Link>
             </div>
           </div>
           <div className='home-vector'>
