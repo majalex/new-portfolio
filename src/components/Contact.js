@@ -2,7 +2,7 @@ import '../Styles/Contact.scss';
 import Navigation from './Navigation'
 import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import AnimatedLetters from './AnimatedLetters'
+import AnimatedLetters from './Functionalities/AnimatedLetters';
 import { gsap } from "gsap";
 import Form from './Functionalities/Form'
 

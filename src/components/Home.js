@@ -1,6 +1,6 @@
 import '../Styles/Home.scss';
 import Navigation from './Navigation';
-import AnimatedLetters from './AnimatedLetters';
+import AnimatedLetters from './Functionalities/AnimatedLetters';
 import { useEffect, useState } from 'react';
 import programmer from '../assets/programmer.svg';
 import background from '../assets/bc-g.svg';
@@ -19,22 +19,34 @@ const Home = () => {
     }, 4500)
 
     gsap.registerPlugin(CustomEase, CustomWiggle);
-    var tl1 = gsap.timeline({repeat: -1});
-    var tl2 = gsap.timeline({repeat: -1})
-    CustomWiggle.create("myWiggle", {wiggles: 15, type: "easeInOut"});
-    tl1.to(".circle", {duration: 2, rotation: 20, ease: "myWiggle"});
-    gsap.from(".flex-section",{xPercent: -200, duration:2, delay:2})
-    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
-    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
-    tl2.to(".title-item",{y: -150, duration:1.5, ease:"bounce"})
-    tl2.to(".title-item",{y: -100, duration:1.5, ease:"bounce"})
-    tl2.to(".title-item",{y: -50, duration:1.5, ease:"bounce"})
-    tl2.to(".title-item",{y: 0, duration:1.5, ease:"bounce"})
-    gsap.from(".home-buttons", {yPercent: 1000, deley:2, duration:3})
-    gsap.from(".home-vector", {xPercent: 1000, deley:1.5, duration:3, ease:"power4"})
-    gsap.from(".circle", {scale:0.1, duration:1 })
+    var tl1 = gsap.timeline({ repeat: -1 });
+    var tl2 = gsap.timeline({ repeat: -1 })
+    CustomWiggle.create("myWiggle", { wiggles: 15, type: "easeInOut" });
+    tl1.to(".circle", { duration: 2, rotation: 20, ease: "myWiggle" });
+    gsap.from(".flex-section", { xPercent: -200, duration: 2, delay: 2 })
+    tl2.to(".title-item", { y: -50, duration: 1.5, ease: "bounce" })
+    tl2.to(".title-item", { y: -100, duration: 1.5, ease: "bounce" })
+    tl2.to(".title-item", { y: -150, duration: 1.5, ease: "bounce" })
+    tl2.to(".title-item", { y: -100, duration: 1.5, ease: "bounce" })
+    tl2.to(".title-item", { y: -50, duration: 1.5, ease: "bounce" })
+    tl2.to(".title-item", { y: 0, duration: 1.5, ease: "bounce" })
+    gsap.from(".home-buttons", { yPercent: 1000, deley: 2, duration: 3 })
+    gsap.from(".home-vector", { xPercent: 1000, deley: 1.5, duration: 3, ease: "power4" })
+    gsap.from(".circle", { scale: 0.1, duration: 1 })
   }, [])
 
+
+  const onButtonClick = () => {
+    fetch('AleksanderMaj.pdf').then(response => {
+      response.blob().then(blob => {
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'AleksanderMaj.pdf';
+        alink.click();
+      })
+    })
+  }
 
   return (
     <div className="Home">
@@ -76,8 +88,10 @@ const Home = () => {
               <span className='job-title'>developer</span>
             </div>
             <div className='home-buttons'>
-            <Link to="/about"><button className='btn'>About me</button></Link>
-            <Link to="/contact"><button className='btn'>Contact</button></Link>
+              <button className='btn' onClick={onButtonClick}>
+                Download CV
+              </button>
+              <Link to="/contact"><button className='btn'>Contact</button></Link>
             </div>
           </div>
           <div className='home-vector'>

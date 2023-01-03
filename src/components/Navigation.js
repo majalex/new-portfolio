@@ -13,7 +13,7 @@ const Navigation = () => {
   }
 
   return (
-    <div className="Navigation">
+    <nav>
       <div className='desktop'>
         <img src={Logo} alt="React Logo" />
         <Link to="/">Home</Link>
@@ -31,7 +31,7 @@ const Navigation = () => {
         </FontAwesomeIcon>
         <div className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
           <FontAwesomeIcon icon={faXmark} className='x-mark' onClick={handleToggle}>
-          {navbarOpen ? "Close" : "Open"}
+            {navbarOpen ? "Close" : "Open"}
           </FontAwesomeIcon>
           <Link to="/" id='mobile-link' className='firstLink'>Home</Link>
           <Link to="/skills" id='mobile-link'>Skills</Link>
@@ -40,7 +40,7 @@ const Navigation = () => {
           <Link to="/contact" id='mobile-link'>Contact</Link>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

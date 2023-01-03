@@ -1,12 +1,29 @@
 import '../Styles/Portfolio.scss';
 import Navigation from './Navigation';
-import AnimatedLetters from './AnimatedLetters';
+import AnimatedLetters from './Functionalities/AnimatedLetters';
 import { useEffect, useState } from 'react';
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
 import img3 from "../assets/3.png";
 import { gsap } from "gsap";
 
+const links = [
+  {
+    linkDemo: 'https://postapp.fun/posts',
+    linkGit: 'https://github.com/majalex/PostApp',
+    img: img1
+  },
+  {
+    linkDemo: 'https://majalex.github.io/projekt-spa/',
+    linkGit: 'https://github.com/majalex/projekt-spa',
+    img: img2
+  },
+  {
+    linkDemo: 'https://majalex.github.io/mm-site/',
+    linkGit: 'https://github.com/majalex/mm-site',
+    img: img3
+  },
+];
 
 const Portfolio = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -16,15 +33,30 @@ const Portfolio = () => {
     setTimeout(() => {
       return setLetterClass('text-animate-hover')
     }, 1500)
-    gsap.from(".product-container", {yPercent:200, stagger: 0.3, duration: 2})
+    gsap.from(".product-container", { yPercent: 200, stagger: 0.1, duration: 2 })
     return () => {
       document.body.style.backgroundColor = ""
     }
-    
   }, [])
 
-  return (
+  const Project = () => (
+    links.map((item, index) => (
+      <div className='product-container' key={index}>
+        <div className='product-box'>
+          <div className='browser-element'>
+            <div className='browser-crircle'></div>
+            <div className='browser-crircle'></div>
+            <div className='browser-crircle'></div>
+          </div>
+          <img src={item.img} alt="" className='p-img' />
+        </div>
+        <a href={item.linkDemo} target="_blank" rel='noreferrer'><button className='btn'>Demo</button></a>
+        <a href={item.linkGit} target="_blank" rel='noreferrer'><button className='btn'>Code</button></a>
+      </div>
+    ))
+  );
 
+  return (
     <div className='Portfolio'>
       <Navigation></Navigation>
       <div className='portfolio-container'>
@@ -38,47 +70,11 @@ const Portfolio = () => {
           </h1>
         </div>
         <div className='projects'>
-          <div className='product-container'>
-            <div className='product-box'>
-              <div className='browser-element'>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-              </div>
-              <img src={img3} alt="" className='p-img' />
-            </div>
-            <a href={"https://majalex.github.io/mm-site/"} target="_blank" rel='noreferrer'><button className='btn'>Demo</button></a>
-            <a href={"https://github.com/majalex/mm-site"} target="_blank" rel='noreferrer'><button className='btn'>Code</button></a>
-          </div>
-          <div className='product-container'>
-            <div className='product-box'>
-              <div className='browser-element'>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-              </div>
-              <img src={img2} alt="" className='p-img' />
-            </div>
-            <a href={"https://majalex.github.io/projekt-spa/"} target="_blank" rel='noreferrer'><button className='btn'>Demo</button></a>
-            <a href={"https://github.com/majalex/projekt-spa"} target="_blank" rel='noreferrer'><button className='btn'>Code</button></a>
-          </div>
-          <div className='product-container'>
-            <div className='product-box'>
-              <div className='browser-element'>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-                <div className='browser-crircle'></div>
-              </div>
-              <img src={img1} alt="" className='p-img' />
-            </div>
-            <a href={"https://majalex.github.io/bootstrap-project-/"} target="_blank" rel='noreferrer'><button className='btn'>Demo</button></a>
-            <a href={"https://github.com/majalex/bootstrap-project-"} target="_blank" rel='noreferrer'><button className='btn'>Code</button></a>
-          </div>
+          <Project />
         </div>
       </div>
     </div>
   )
-
 }
 
 export default Portfolio;

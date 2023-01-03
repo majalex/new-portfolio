@@ -1,6 +1,6 @@
 //========================// NAVIGATION STYLES //==========================//
 
-.Navigation {
+nav {
     padding: 30px;
     img {
         position: absolute;
@@ -61,7 +61,7 @@
 }
 
 @media screen and (max-width: 935px) {
-    .Navigation {
+    nav{
         img {
             display: none;
         }
@@ -69,7 +69,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .Navigation {
+    nav{
         a {
             display: none;
         }

@@ -1,6 +1,6 @@
 import '../Styles/About.scss';
 import Navigation from './Navigation';
-import AnimatedLetters from './AnimatedLetters';
+import AnimatedLetters from './Functionalities/AnimatedLetters';
 import { useEffect, useState } from "react";
 import photo from '../assets/project.jpeg';
 import { gsap } from "gsap";
